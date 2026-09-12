@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.K. Tailor — Borivali West, Mumbai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #16233a;
+            --navy-2: #1f3350;
+            --cream: #f3ede0;
+            --cream-2: #e9e0cb;
+            --ochre: #c98a2c;
+            --forest: #2f4a3d;
+            --ink: #211d17;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Spectral', serif;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            background: var(--navy);
+            color: var(--cream);
+            font-size: 0.85rem;
+        }
+
+        .topbar .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 32px;
+        }
+
+        .topbar a {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 32px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--navy);
+        }
+
+        .brand .sub {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.68rem;
+            letter-spacing: 0.06em;
+            color: var(--ochre);
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+        }
+
+        a.btn-call {
+            background: var(--navy);
+            color: var(--cream-2);
+            padding: 10px 20px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 36px 0 76px;
+        }
+
+        .hero .wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cream-2);
+            border: 1px solid rgba(22, 35, 58, 0.15);
+            padding: 7px 14px;
+            border-radius: 2px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 22px;
+        }
+
+        .hero-badge .stars {
+            color: var(--ochre);
+        }
+
+        .hero h1 {
+            font-size: 2.7rem;
+            line-height: 1.15;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .accent {
+            color: var(--ochre);
+            font-style: italic;
+        }
+
+        .hero p {
+            color: #4d4638;
+            max-width: 42ch;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 26px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            background: var(--ochre);
+            color: var(--navy);
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--navy);
+            color: var(--navy);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 24px 48px -18px rgba(22, 35, 58, 0.4);
+        }
+
+        /* STATS */
+        .stats {
+            background: var(--navy);
+            color: var(--cream);
+        }
+
+        .stats .wrap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 36px 32px;
+        }
+
+        .stat {
+            text-align: center;
+            border-left: 1px solid rgba(243, 237, 224, 0.18);
+        }
+
+        .stat:first-child {
+            border-left: none;
+        }
+
+        .stat .num {
+            font-family: 'Spectral', serif;
+            font-size: 2rem;
+            color: var(--ochre);
+            font-weight: 700;
+        }
+
+        .stat .label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 84px 0;
+        }
+
+        .kicker {
+            color: var(--forest);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .section-head {
+            max-width: 56ch;
+            margin-bottom: 48px;
+        }
+
+        .section-head h2 {
+            font-size: 2.1rem;
+            color: var(--navy);
+            margin-bottom: 14px;
+        }
+
+        .section-head p {
+            color: #4d4638;
+            margin: 0;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            color: #4d4638;
+            margin: 0 0 16px;
+        }
+
+        .about-signoff {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(22, 35, 58, 0.15);
+            font-size: 0.92rem;
+        }
+
+        .about-signoff strong {
+            color: var(--navy);
+            font-family: 'Spectral', serif;
+            font-size: 1.05rem;
+        }
+
+        /* SERVICES - price list style */
+        .price-list {
+            border-top: 2px solid var(--navy);
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 20px;
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(22, 35, 58, 0.15);
+        }
+
+        .price-row .name {
+            font-family: 'Spectral', serif;
+            font-size: 1.15rem;
+            color: var(--navy);
+        }
+
+        .price-row .desc {
+            color: #6b6353;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            max-width: 52ch;
+        }
+
+        .price-row .price {
+            font-weight: 600;
+            color: var(--forest);
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+
+        /* WHY US - vertical list */
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .why-item {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 24px;
+            padding: 26px 0;
+            border-bottom: 1px solid rgba(22, 35, 58, 0.12);
+        }
+
+        .why-item:last-child {
+            border-bottom: none;
+        }
+
+        .why-item .mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid var(--ochre);
+            color: var(--ochre);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Spectral', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .why-item h3 {
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .why-item p {
+            color: #4d4638;
+            margin: 0;
+            font-size: 0.94rem;
+        }
+
+        /* TESTIMONIAL BAND */
+        .testimonial-band {
+            background: var(--forest);
+            color: var(--cream);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+            padding: 76px 0;
+        }
+
+        .testi {
+            border-left: 2px solid var(--ochre);
+            padding-left: 20px;
+        }
+
+        .testi p {
+            font-family: 'Spectral', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin: 0 0 14px;
+            color: #f3ede0;
+        }
+
+        .testi .who {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 14px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .gallery .g-main {
+            grid-row: span 2;
+        }
+
+        .gallery .g-wide {
+            grid-column: 2/4;
+        }
+
+        .photo-note {
+            font-size: 0.78rem;
+            color: #8a8271;
+            margin-top: 14px;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: var(--navy);
+            color: var(--cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            padding: 80px 0;
+        }
+
+        .contact-grid h2 {
+            color: var(--cream);
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-grid>div:first-child p {
+            color: #c9c3b3;
+            max-width: 44ch;
+            margin-bottom: 26px;
+        }
+
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        .hours-table td {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(243, 237, 224, 0.15);
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            color: var(--ochre);
+            font-weight: 600;
+        }
+
+        .details-card {
+            background: rgba(243, 237, 224, 0.06);
+            border: 1px solid rgba(243, 237, 224, 0.15);
+            border-radius: 2px;
+            padding: 32px;
+        }
+
+        .details-card .label {
+            font-size: 0.76rem;
+            color: var(--ochre);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 6px;
+        }
+
+        .details-card .val {
+            font-size: 1.02rem;
+            margin-bottom: 22px;
+        }
+
+        .details-card .val:last-child {
+            margin-bottom: 0;
+        }
+
+        .details-card a {
+            text-decoration: none;
+            border-bottom: 1px solid rgba(243, 237, 224, 0.4);
+        }
+
+        footer {
+            background: #101a2b;
+            color: #8891a3;
+            text-align: center;
+            padding: 26px 0;
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 860px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-bottom: 56px;
+            }
+
+            .hero .wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-img {
+                height: 260px;
+            }
+
+            .stats .wrap {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 24px;
+            }
+
+            .stat:nth-child(3) {
+                border-left: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .about-grid img {
+                height: 260px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                padding: 52px 0;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 160px 160px;
+            }
+
+            .gallery .g-main {
+                grid-row: span 1;
+            }
+
+            .gallery .g-wide {
+                grid-column: auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                padding: 56px 0;
+            }
+
+            .price-row {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .wrap {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="wrap">
+            <span>Behind Hanuman Temple, Roshan Nagar Rd, Borivali West</span>
+            <a href="tel:+919820035154">Call: +91 98200 35154</a>
+        </div>
+    </div>
+
+    <nav>
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <!-- TODO: Replace the src attribute with the path to your actual logo image -->
+            <img src="your-logo-here.png" alt="K.K. Tailor Logo"
+                style="width: 48px; height: 48px; object-fit: contain; background-color: rgba(22, 35, 58, 0.1); border-radius: 4px;">
+            <div class="brand">K.K. TAILOR
+                <span class="sub">BORIVALI WEST · EST. FOR MEN'S BESPOKE WEAR</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#gallery">Our Work</a>
+            <a href="#contact">Visit Us</a>
+            <a class="btn-call" href="tel:+919820035154">Call Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="wrap">
+            <div>
+                <div class="hero-badge"><span class="stars">★★★★★</span> 4.7 rating · 160+ happy customers</div>
+                <h1>Suits and sherwanis, cut the way <span class="accent">Alpeshbhai</span> has for years.</h1>
+                <p>From wedding tuxedos to everyday formal wear, K.K. Tailor has been Borivali West's trusted name for
+                    precise fitting, honest advice on fabric, and finishing that lasts.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="tel:+919820035154">Call to Book a Fitting</a>
+                    <a class="btn btn-outline" href="#services">View Services</a>
+                </div>
+            </div>
+            <img class="hero-img"
+                src="https://images.stockcake.com/public/7/4/9/749d2f25-b785-43f7-b290-0514a90f6ee3_large/tailor-shop-display-stockcake.jpg"
+                alt="Tailored suits on display">
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="wrap">
+            <div class="stat">
+                <div class="num">4.7★</div>
+                <div class="label">Average rating</div>
+            </div>
+            <div class="stat">
+                <div class="num">160+</div>
+                <div class="label">Customer reviews</div>
+            </div>
+            <div class="stat">
+                <div class="num">2019</div>
+                <div class="label">Serving Borivali since</div>
+            </div>
+            <div class="stat">
+                <div class="num">7</div>
+                <div class="label">Days a week open</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="about-grid">
+                <img src="https://images.stockcake.com/public/b/e/9/be9309f0-bcb2-479e-99ee-7b22d6160253_large/tailor-at-work-stockcake.jpg"
+                    alt="Tailor at work on a garment">
+                <div class="about-text">
+                    <div class="kicker">ABOUT THE SHOP</div>
+                    <h2 style="font-size:1.9rem; color:var(--navy); margin-bottom:16px;">A neighbourhood tailor, trusted
+                        for the big days.</h2>
+                    <p>K.K. Tailor has built its name in Borivali West on one simple idea: a suit should fit the person,
+                        not just the pattern. Run personally by Alpeshbhai, the shop stays on top of current styles
+                        while keeping the classic hand-finishing that makes a garment last.</p>
+                    <p>Families come back year after year — for a daughter's wedding trousseau, a son's first tuxedo, or
+                        a father's everyday formal wear. Fabric is available in-store, so you can choose, discuss and
+                        get measured in a single visit.</p>
+                    <div class="about-signoff">
+                        <strong>Alpeshbhai</strong> — Master Tailor &amp; Owner<br>
+                        <span style="color:#6b6353;">Specialist in suits, blazers, sherwanis &amp; wedding wear</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services" style="background:var(--cream-2); padding-top:76px;">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">WHAT WE STITCH</div>
+                <h2>Made to your measurements, not off a rack.</h2>
+                <p>Every piece starts with a conversation about occasion, fabric and fit. Prices vary by fabric choice —
+                    these are typical starting rates.</p>
+            </div>
+            <div class="price-list">
+                <div class="price-row">
+                    <div>
+                        <div class="name">Wedding Suit / Tuxedo</div>
+                        <div class="desc">Full suit or tuxedo tailored for the big day, including trial fittings.</div>
+                    </div>
+                    <div class="price">From ₹4,500</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <div class="name">Sherwani &amp; Indo-Western Wear</div>
+                        <div class="desc">Groom and family sherwanis, bandhgalas and festive wear.</div>
+                    </div>
+                    <div class="price">From ₹5,500</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <div class="name">Business Suit / Blazer</div>
+                        <div class="desc">Everyday formal wear for the office, cut for comfort and a sharp line.</div>
+                    </div>
+                    <div class="price">From ₹3,800</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <div class="name">Shirts &amp; Trousers</div>
+                        <div class="desc">Made-to-measure basics, including Italian-style cuts on request.</div>
+                    </div>
+                    <div class="price">From ₹900</div>
+                </div>
+                <div class="price-row">
+                    <div>
+                        <div class="name">Alterations</div>
+                        <div class="desc">Refit an existing garment — waist, length, shoulders and more.</div>
+                    </div>
+                    <div class="price">From ₹200</div>
+                </div>
+            </div>
+            <p style="font-size:0.82rem; color:#6b6353; margin-top:18px;">*Indicative pricing — final cost depends on
+                fabric and design. Call the shop to confirm.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">WHY CUSTOMERS RETURN</div>
+                <h2>What 160+ reviews keep saying.</h2>
+            </div>
+            <div class="why-list">
+                <div class="why-item">
+                    <div class="mark">1</div>
+                    <div>
+                        <h3>Fit that holds up</h3>
+                        <p>Customers consistently note precise, comfortable fitting — from a first suit to a fifth.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="mark">2</div>
+                    <div>
+                        <h3>Up to date with trends</h3>
+                        <p>Alpeshbhai is known for staying current with styles while giving honest guidance on what will
+                            actually suit the occasion.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="mark">3</div>
+                    <div>
+                        <h3>One shop for everything</h3>
+                        <p>Choose fabric, get measured, and place your order in a single visit — no running between
+                            shops.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <div class="mark">4</div>
+                    <div>
+                        <h3>Built for big occasions</h3>
+                        <p>A regular choice for wedding parties needing multiple matching outfits stitched on a
+                            timeline.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-band">
+        <div class="wrap">
+            <div class="testimonial-grid">
+                <div class="testi">
+                    <p>"Our whole family came here for wedding outfits — every piece fit perfectly and looked exactly as
+                        we'd imagined."</p>
+                    <div class="who">— Wedding party client</div>
+                </div>
+                <div class="testi">
+                    <p>"Alpeshbhai understood exactly what I wanted for my tuxedo and guided me on the right fabric
+                        too."</p>
+                    <div class="who">— Tuxedo client</div>
+                </div>
+                <div class="testi">
+                    <p>"Been coming here for years for blazers and formal shirts — the fit is always spot on."</p>
+                    <div class="who">— Regular customer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <div class="wrap">
+            <div class="section-head">
+                <div class="kicker">A GLIMPSE INSIDE</div>
+                <h2>Fabric, fitting, and finishing.</h2>
+            </div>
+            <div class="gallery">
+                <img class="g-main"
+                    src="https://images.stockcake.com/public/6/6/b/66b4cd4a-3a20-4ff1-94fc-328954a530c1_large/tailored-suit-fitting-stockcake.jpg"
+                    alt="Tailor conducting a suit fitting">
+                <img src="https://images.stockcake.com/public/6/a/9/6a928c41-e84c-49d0-a799-e8a2a17c411b_large/tailor-s-workbench-detail-stockcake.jpg"
+                    alt="Fabric and tools on the workbench">
+                <img src="https://images.stockcake.com/public/b/e/9/be9309f0-bcb2-479e-99ee-7b22d6160253_large/tailor-at-work-stockcake.jpg"
+                    alt="Tailor focused on stitching">
+                <img src="https://images.stockcake.com/public/7/4/9/749d2f25-b785-43f7-b290-0514a90f6ee3_large/tailor-shop-display-stockcake.jpg"
+                    alt="Finished suits on display" class="g-wide">
+            </div>
+            <p class="photo-note">Representative photos shown — swap in real shop and fitting photos any time to make
+                this fully yours.</p>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="wrap">
+            <div class="contact-grid">
+                <div>
+                    <div class="kicker" style="color:var(--ochre);">VISIT THE SHOP</div>
+                    <h2>Come in, or call ahead to book a slot.</h2>
+                    <p>Walk-ins are welcome all week. For wedding orders or multiple outfits, calling ahead helps us
+                        plan your fittings around your date.</p>
+                    <table class="hours-table">
+                        <tr>
+                            <td>Monday – Saturday</td>
+                            <td>10:30 AM – 8:30 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>11:00 AM – 2:00 PM</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="details-card">
+                    <div class="label">ADDRESS</div>
+                    <div class="val">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19167.91104344167!2d72.84332379281827!3d19.248033552960127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b1cf462fa307%3A0x8d4c117092c96bf2!2sK.K.TAILOR(Borivali-West)!5e1!3m2!1sen!2sin!4v1789213226893!5m2!1sen!2sin"
+                            width="100%" height="220" style="border:0; border-radius:4px; margin-bottom:12px;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        <br>
+                        <a href="https://maps.app.goo.gl/y5srq7eGo8s6724u7" target="_blank"
+                            style="font-weight: 600; color: var(--ochre); border-bottom: none; text-decoration: underline;">Get
+                            Directions &rarr;</a>
+                    </div>
+                    <div class="label">PHONE</div>
+                    <div class="val"><a href="tel:+919820035154">+91 98200 35154</a></div>
+                    <div class="label">RATING</div>
+                    <div class="val">4.7 / 5 — based on 160+ Google reviews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>K.K. Tailor — Borivali West, Mumbai · Bespoke Menswear Since 2019</footer>
+
+</body>
+
+</html>
